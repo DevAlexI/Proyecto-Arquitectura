@@ -12,18 +12,19 @@ var app = express();
 
 console.log("Hello World");
 // view engine setup
-//app.set('view engine', 'jade');
-/*
+app.set('view engine', 'jade');
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/*
 app.use('/auth', authRouter);
 app.use('/', indexRouter);
 app.use('/tasks', tasksRouter);
-//app.use('/payment', paymentRouter);
-
+app.use('/payment', paymentRouter);
 */
+
 module.exports = app;
