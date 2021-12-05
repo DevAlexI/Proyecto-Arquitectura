@@ -3,11 +3,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 /*
-var indexRouter = require('./routes/index');
 var tasksRouter = require('./routes/tasks');
 var authRouter = require('./routes/auth');
 var paymentRouter = require('./routes/payment');
 */
+var indexRouter = require('./routes');
+
 var app = express();
 
 console.log("Hello World");
@@ -22,9 +23,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /*
 app.use('/auth', authRouter);
-app.use('/', indexRouter);
 app.use('/tasks', tasksRouter);
 app.use('/payment', paymentRouter);
 */
+app.use('/', indexRouter);
+
 
 module.exports = app;
