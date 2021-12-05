@@ -20,4 +20,4 @@ ENV HOST=0.0.0.0 PORT=3000
 
 EXPOSE ${PORT}
 
-CMD [ "npm", "run", "deploy" ]
+CMD [ "node", "bin/www" ]

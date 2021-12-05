@@ -7,7 +7,7 @@ var tasksRouter = require('./routes/tasks');
 var authRouter = require('./routes/auth');
 var paymentRouter = require('./routes/payment');
 */
-var indexRouter = require('./routes/index');
+var indexRouter = require('./routes');
 
 var app = express();
 
