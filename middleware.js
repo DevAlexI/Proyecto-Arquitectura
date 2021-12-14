@@ -4,7 +4,7 @@ const utils = require('./test/utils');
 
 module.exports = async function (req, res, next) {
     try {
-        const keys = await utils.getKeysFromFile();
+        const keys = await utils.getDataFromFile(VALID_KEYS_PATH);
         const xApiKey = req.headers['x-api-key'];
         if(!xApiKey) return res.status(401).send();
         if(keys.includes(xApiKey)) return next();
@@ -15,3 +15,4 @@ module.exports = async function (req, res, next) {
         });
     }
 };
+
