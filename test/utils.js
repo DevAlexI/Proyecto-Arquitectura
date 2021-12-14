@@ -5,6 +5,7 @@ const PAYMENT_FILE_PATH = path.resolve('./payment-generated.txt');
 const os = require('os');
 const faker = require('faker');
 const {compact} = require('lodash');
+const SHIPMENT_FILE_PATH = path.resolve('./shipment-generated.txt')
 
 const readFile = (path) => {
     return new Promise((resolve, reject) => {
@@ -15,8 +16,8 @@ const readFile = (path) => {
     });
 };
 
-const getKeysFromFile = () => {
-    return readFile(KEY_FILE)
+const getDataFromFile = (path) => {
+    return readFile(path)
         .then(data => {
             return compact(data.split(os.EOL));
         })
@@ -38,6 +39,15 @@ const generateKeysFile = (data) => {
     })
 };
 
+const generateShipmentFile = (data) => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile(SHIPMENT_FILE_PATH, data || '', 'utf8', (err => {
+            if(err) return reject();
+            else resolve();
+        }))
+    })
+}
+
 const generatePaymentFile = (data) => {
     return new Promise((resolve, reject) => {
         fs.writeFile(PAYMENT_FILE_PATH, data || '', 'utf8', (err => {
@@ -49,16 +59,22 @@ const generatePaymentFile = (data) => {
 
 
 const clearKeysFile = () => {
+    console.log('executing clearKeysFile');
     return removeFile(KEY_FILE);
 };
 
 
 const removeFile = (path) => {
     return new Promise((resolve, reject) => {
+        console.log('Path: ' + path);
         fs.unlink(path, err => {
-            if(err && err.code === 'ENOENT') resolve();
+            if(err) console.log('Error: ' + err);
+            else {
+                console.log("Deleted");
+            }
+            /*if(err && err.code === 'ENOENT') resolve();
             else if (err) reject(err);
-            else resolve()
+            else resolve()*/
         });
     })
 };
@@ -66,9 +82,10 @@ const removeFile = (path) => {
 module.exports = {
     readFile,
     removeFile,
-    getKeysFromFile,
+    getDataFromFile,
     clearKeysFile,
     generateKeysFile,
     getFromFile,
     generatePaymentFile,
+    generateShipmentFile
 };
