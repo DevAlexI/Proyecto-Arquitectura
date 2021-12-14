@@ -1,49 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="6.2070" tests="16" failures="2">
-  <testsuite name="Root Suite" timestamp="2021-12-14T22:57:38" tests="0" time="0.0000" failures="0">
+<testsuites name="Mocha Tests" time="4.7990" tests="17" failures="1">
+  <testsuite name="Root Suite" timestamp="2021-12-14T23:04:38" tests="0" time="0.0000" failures="0">
   </testsuite>
-  <testsuite name="express_authentication" timestamp="2021-12-14T22:57:38" tests="7" file="C:\Users\Alex Isasi\Documents\GitHub\Proyecto-Arquitectura\test\index.spec.js" time="3.1060" failures="1">
-    <testcase name="express_authentication Should generate an API key and add it to file" time="0.5180" classname="Should generate an API key and add it to file">
+  <testsuite name="express_authentication" timestamp="2021-12-14T23:04:38" tests="7" file="C:\Users\Alex Isasi\Documents\GitHub\Proyecto-Arquitectura\test\index.spec.js" time="3.2160" failures="1">
+    <testcase name="express_authentication Should generate an API key and add it to file" time="0.5130" classname="Should generate an API key and add it to file">
     </testcase>
-    <testcase name="express_authentication Should generate 5 unique API Keys" time="0.5140" classname="Should generate 5 unique API Keys">
+    <testcase name="express_authentication Should generate 5 unique API Keys" time="0.5160" classname="Should generate 5 unique API Keys">
     </testcase>
-    <testcase name="express_authentication Should return the API Key back in response" time="0.0280" classname="Should return the API Key back in response">
+    <testcase name="express_authentication Should return the API Key back in response" time="0.1320" classname="Should return the API Key back in response">
     </testcase>
-    <testcase name="express_authentication Should send a 401 if the x-api-key header is not present" time="0.0070" classname="Should send a 401 if the x-api-key header is not present">
+    <testcase name="express_authentication Should send a 401 if the x-api-key header is not present" time="0.0100" classname="Should send a 401 if the x-api-key header is not present">
     </testcase>
-    <testcase name="express_authentication Should send a 401 if the x-api-key is invalid" time="0.0060" classname="Should send a 401 if the x-api-key is invalid">
+    <testcase name="express_authentication Should send a 401 if the x-api-key is invalid" time="0.0090" classname="Should send a 401 if the x-api-key is invalid">
     </testcase>
-    <testcase name="express_authentication Should validate header for protected routes" time="0.0220" classname="Should validate header for protected routes">
+    <testcase name="express_authentication Should validate header for protected routes" time="0.0280" classname="Should validate header for protected routes">
     </testcase>
-    <testcase name="express_authentication Should not require auth headers for unprotected routes" time="2.0110" classname="Should not require auth headers for unprotected routes">
+    <testcase name="express_authentication Should not require auth headers for unprotected routes" time="2.0080" classname="Should not require auth headers for unprotected routes">
       <failure message="Timeout of 2000ms exceeded. For async tests and hooks, ensure &quot;done()&quot; is called; if returning a Promise, ensure it resolves. (C:\Users\Alex Isasi\Documents\GitHub\Proyecto-Arquitectura\test\index.spec.js)" type="Error"><![CDATA[Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves. (C:\Users\Alex Isasi\Documents\GitHub\Proyecto-Arquitectura\test\index.spec.js)
     at listOnTimeout (internal/timers.js:554:17)
     at processTimers (internal/timers.js:497:7)]]></failure>
     </testcase>
   </testsuite>
-  <testsuite name="Manage operations" timestamp="2021-12-14T22:57:41" tests="4" file="C:\Users\Alex Isasi\Documents\GitHub\Proyecto-Arquitectura\test\operations.spec.js" time="0.0200" failures="0">
-    <testcase name="Manage operations Should generate the result of a sum" time="0.0050" classname="Should generate the result of a sum">
+  <testsuite name="Manage operations" timestamp="2021-12-14T23:04:41" tests="4" file="C:\Users\Alex Isasi\Documents\GitHub\Proyecto-Arquitectura\test\operations.spec.js" time="0.0220" failures="0">
+    <testcase name="Manage operations Should generate the result of a sum" time="0.0060" classname="Should generate the result of a sum">
     </testcase>
-    <testcase name="Manage operations Should generate the result of a subtraction" time="0.0060" classname="Should generate the result of a subtraction">
+    <testcase name="Manage operations Should generate the result of a subtraction" time="0.0050" classname="Should generate the result of a subtraction">
     </testcase>
     <testcase name="Manage operations Should generate the result of a multiply" time="0.0050" classname="Should generate the result of a multiply">
     </testcase>
-    <testcase name="Manage operations Should generate a random division" time="0.0040" classname="Should generate a random division">
+    <testcase name="Manage operations Should generate a random division" time="0.0060" classname="Should generate a random division">
     </testcase>
   </testsuite>
-  <testsuite name="payment check" timestamp="2021-12-14T22:57:41" tests="3" file="C:\Users\Alex Isasi\Documents\GitHub\Proyecto-Arquitectura\test\payment.spec.js" time="2.5250" failures="1">
-    <testcase name="payment check Should generate an random price" time="0.5170" classname="Should generate an random price">
+  <testsuite name="payment check" timestamp="2021-12-14T23:04:41" tests="4" file="C:\Users\Alex Isasi\Documents\GitHub\Proyecto-Arquitectura\test\payment.spec.js" time="1.0380" failures="0">
+    <testcase name="payment check Should generate a random price" time="0.5110" classname="Should generate a random price">
     </testcase>
-    <testcase name="payment check &quot;before each&quot; hook for &quot;Should generate 5 random prices&quot;" time="2.0080" classname="&quot;before each&quot; hook for &quot;Should generate 5 random prices&quot;">
-      <failure message="Timeout of 2000ms exceeded. For async tests and hooks, ensure &quot;done()&quot; is called; if returning a Promise, ensure it resolves. (C:\Users\Alex Isasi\Documents\GitHub\Proyecto-Arquitectura\test\payment.spec.js)" type="Error"><![CDATA[Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves. (C:\Users\Alex Isasi\Documents\GitHub\Proyecto-Arquitectura\test\payment.spec.js)
-    at listOnTimeout (internal/timers.js:554:17)
-    at processTimers (internal/timers.js:497:7)]]></failure>
+    <testcase name="payment check Should generate 5 random prices" time="0.5100" classname="Should generate 5 random prices">
+    </testcase>
+    <testcase name="payment check Should return the discounts applied" time="0.0110" classname="Should return the discounts applied">
+    </testcase>
+    <testcase name="payment check Should return 5 promo codes" time="0.0060" classname="Should return 5 promo codes">
     </testcase>
   </testsuite>
-  <testsuite name="Manage shipments" timestamp="2021-12-14T22:57:43" tests="2" file="C:\Users\Alex Isasi\Documents\GitHub\Proyecto-Arquitectura\test\shipment.spec.js" time="0.5560" failures="0">
-    <testcase name="Manage shipments Should generate a shipment and add it to file" time="0.5520" classname="Should generate a shipment and add it to file">
+  <testsuite name="Manage shipments" timestamp="2021-12-14T23:04:42" tests="2" file="C:\Users\Alex Isasi\Documents\GitHub\Proyecto-Arquitectura\test\shipment.spec.js" time="0.5230" failures="0">
+    <testcase name="Manage shipments Should generate a shipment and add it to file" time="0.5200" classname="Should generate a shipment and add it to file">
     </testcase>
-    <testcase name="Manage shipments Should generate a random address" time="0.0040" classname="Should generate a random address">
+    <testcase name="Manage shipments Should generate a random address" time="0.0030" classname="Should generate a random address">
     </testcase>
   </testsuite>
 </testsuites>
