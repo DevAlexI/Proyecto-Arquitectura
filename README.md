@@ -1,6 +1,7 @@
 # Proyecto Final Diplomado 2021
 
 ## Especificaciones
+* Texto prueba
 * Fecha de entrega `15 de diciembre 2021 - 7:30PM`
 * No se adpmiten entregas fuera de tiempo
 * Presentación del proyecto con explicación y detalles 10 min por persona, se daran los horarios y enlaces por persona 
