@@ -1,6 +1,7 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const server = require('../app');
+const path = require('path');
 const should = chai.should();
 const sinon = require('sinon');
 const keyStore = require('../key-store');
@@ -8,6 +9,8 @@ const {Request, Response} = require('./mock');
 const utils = require('./utils');
 const {uniq} = require('lodash');
 const Promise = require('bluebird');
+const KEY_FILE = path.resolve('./valid-keys.txt');
+
 
 chai.use(chaiHttp);
 
@@ -24,20 +27,25 @@ describe('express_authentication', () => {
             })
     });
 
-    afterEach((done) => {
+    /*
+    after((done) => {
+        console.log('Agent: ' + agent);
         if (agent) {
             agent.close();
         }
         utils.clearKeysFile()
-            .then(() => {
+            .then((data) => {
+                console.log('clearKeysFile: ' + data)
                 done();
             })
-    });
+        console.log('End of afterEach');
+    });*/
+   
 
     it('Should generate an API key and add it to file', (done) => {
         keyStore(req, res);
         setTimeout(() => {
-            utils.getKeysFromFile()
+            utils.getDataFromFile(KEY_FILE)
                 .then(data => {
                     data.length.should.eql(1);
                     done();
@@ -51,7 +59,7 @@ describe('express_authentication', () => {
             keyStore(req, res);
         }
         setTimeout(() => {
-            utils.getKeysFromFile()
+            utils.getDataFromFile(KEY_FILE)
                 .then(data => {
                     data.length.should.eql(n);
                     const uniqKeys = uniq(data);
@@ -68,7 +76,7 @@ describe('express_authentication', () => {
             .get('/auth')
             .then(res => {
                 response = res;
-                return utils.getKeysFromFile();
+                return utils.getDataFromFile(KEY_FILE);
             })
             .then(keys => {
                 keys[0].should.equal(response.body.apiKey);
@@ -141,6 +149,5 @@ describe('express_authentication', () => {
                 });
                 done();
             })
-
     });
 });

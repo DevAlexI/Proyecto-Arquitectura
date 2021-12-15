@@ -1,6 +1,6 @@
 # Check out https://hub.docker.com/_/node to select a new base image
 FROM node:14-alpine
-
+LABEL authors="Alejandro Jimenez"
 # Set to a non-root built-in user `node`
 USER node
 

@@ -1,8 +1,15 @@
-name: Tests
+name: Tests--CI-CD
+
 'on':
   push:
     branches:  
       - Main
+      - Arch-Dev
+      
+  pull_request:
+    branches:
+      - Main
+
 jobs:
   test:
     name: 'Nodejs v${{ matrix.node }}'
@@ -29,3 +36,5 @@ jobs:
         run: npm install
       - name: Ejecuta los test de nuestro proyecto
         run: npm run test
+
+

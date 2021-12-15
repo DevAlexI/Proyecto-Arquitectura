@@ -7,6 +7,9 @@ var middleware = require('../middleware');
 //router.use(middleware);
 
 router
+    .get('/discounts', paymentController.applyDiscount);
+
+router
     .get('/promos', paymentController.getPromos);
 
 module.exports = router;

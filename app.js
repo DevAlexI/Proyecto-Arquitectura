@@ -3,15 +3,16 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var indexRouter = require('./routes/index');
 var tasksRouter = require('./routes/tasks');
 var authRouter = require('./routes/auth');
 var paymentRouter = require('./routes/payment');
-
-var indexRouter = require('./routes');
+var operationsRouter = require('./routes/operations');
+var shipmentRouter = require('./routes/shipment');
 
 var app = express();
 
-console.log("Hello World");
+						   
 // view engine setup
 app.set('view engine', 'jade');
 
@@ -23,10 +24,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/auth', authRouter);
-app.use('/tasks', tasksRouter);
-app.use('/payment', paymentRouter);
-
 app.use('/', indexRouter);
+app.use('/tasks', tasksRouter);
+app.use('/shipment', shipmentRouter);
+app.use('/payment', paymentRouter);
+app.use('/operations', operationsRouter);
+						  
 
 
 module.exports = app;
